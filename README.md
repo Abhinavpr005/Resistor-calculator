@@ -1,1 +1,1 @@
-# Resistor Calculator
+# Resistor-Calculator
