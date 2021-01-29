@@ -1,0 +1,399 @@
+<html>
+<head>
+	<title>
+		resistance converter
+	</title>
+	<style type="text/css">
+		*{
+			margin:0;
+			padding:0;
+		}
+		body{
+			background-color:rgb(200,200,200);
+		}
+		h1{
+			text-align:center;
+			padding:14px;
+			color:rgb(230,230,230);
+			font-size:1.75em;
+			background-color:rgba(30,30,30,.7);
+			box-shadow:gray 0 0 5px 2px;
+		}
+		h2{
+			padding:4%;
+		}
+		a{
+			text-align:center;
+			color:red;
+			text-decoration:none;
+		}
+/*		#res{
+			margin:auto;
+			text-align:center;
+			background-color:aqua;
+			width:60%;
+			max-width:500px;
+			border-radius:30px;
+			box-shadow:rgb(50,200,100) 0 0 5px 1px;
+		}
+		#fv{
+		display:inline-block;
+		width:7%;
+		height:10%;
+		min-height:80px;
+		margin-left:10px;
+		background-color:brown;
+		margin-bottom:-4px;
+		}
+		#sv,#tv,#fov{
+		display:inline-block;
+		width:7%;
+		height:10%;
+		min-height:80px;
+		background-color:black;
+		margin-left:20px;
+		margin-bottom:-4px;
+		}
+		#lv{
+		display:inline-block;
+		width:7%;
+		height:10%;
+		min-height:80px;
+		background-color:gold;
+		margin-left:40px;
+		margin-bottom:-4px;
+		}*/
+		#resistor {
+			width:20.5em;
+			margin:auto;
+			}
+		#res {
+			display:inline-block;
+			width:14.5em;
+			height:4.5em;
+			border-radius:15px;
+			background-color:#CEB18B;
+			margin:auto;
+			box-shadow:rgb(150,150,150) 0 0 5px 1px;
+		}
+		#le {
+			display:inline-block;
+			height:4.5em;
+			margin-right:-4px;
+		}
+		.rile {
+			width:3em;
+			height:15px;
+			background-color:gray;
+			margin-top:58%;
+		}
+		#ri {
+			display:inline-block;
+			height:4.5em;
+			margin-left:-4px;
+		}
+		#left{
+			border-top-left-radius:50px;
+			border-bottom-left-radius:50px;
+		}
+		#right{
+			border-top-right-radius:50px;
+			border-bottom-right-radius:50px;
+		}
+		#fv {
+			display:inline-block;
+			width:18.5px;
+			height:4.5em;
+			background-color:brown;
+			margin-left:20px;
+		}
+		#sv,#tv,#fov {
+			display:inline-block;
+			width:18.5px;
+			height:4.5em;
+			background-color:black;
+			margin-left:12px;
+		}
+		#lv {
+			display:inline-block;
+			width:18.5px;
+			height:4.5em;
+			background-color:silver;
+			margin-left:24px;
+		}
+		#val{
+			text-align:center;
+			margin:5%;
+			font-size:27px;
+			font-weight:bold;
+		}
+		.fb{
+			max-width:60px;
+			width:70%;
+			height:30px;
+			margin-top:10px;
+			margin-bottom:2px;
+			margin-left:auto;
+			margin-right:auto;
+			border-radius:5px;
+			box-shadow:rgb(150,150,150) 0 0 5px 1px;
+		}
+		.b{
+			background-color:black;
+		}
+		.br{
+			background-color:brown;
+		}
+		.r{
+			background-color:red;
+		}
+		.or{
+			background-color:orange;
+		}
+		.ye{
+			background-color:yellow;
+		}
+		.gr{
+			background-color:lime;
+		}
+		.bl{
+			background-color:blue;
+		}
+		.vi{
+			background-color:purple;
+		}
+		.go{
+			background-color:gold;
+		}
+		.wh{
+			background-color:white;
+		}
+		.si{
+			background-color:silver;
+		}
+		.gra{
+			background-color:gray;
+		}
+		.und{
+			text-decoration:underline;
+			margin-bottom:3%;
+		}
+		#bands{
+			text-align:center;
+		}
+		.allb {
+			float:left;
+			width:20%;
+			margin-top:3%;
+		}
+		.scrol{
+			overflow:scroll;
+			height:36%;
+			margin-bottom:10%;
+		}
+	</style>
+</head>
+<body onclick="a()">
+	<h1>Resistance Calculator</h1>
+	<a href="../index.html" ><h2>Go To Four Band→</h2></a>
+<!--	<div id="res">
+		<div id="fv"></div>
+		<div id="sv"></div>
+		<div id="tv"></div>
+		<div id="fov"></div>
+		<div id="lv"></div>
+	</div>-->
+<div id="resistor" >
+	<div id="le" >
+		<div class="rile" id="left" ></div>
+	</div>
+	<div id="res" >
+		<div id="fv" ></div>
+		<div id="sv" ></div>
+		<div id="tv" ></div>
+		<div id="fov"></div>
+		<div id="lv" ></div>
+	</div>
+	<div id="ri" >
+		<div class="rile" id="right" ></div>
+	</div>
+</div>
+<div id="bands" >
+	<div id="val">100Ω ±10%</div>
+<div class="allb" >
+	<h4 class="und">1st Band</h4>
+	<div class="scrol">
+		<div class="fb br" onclick="color('brown')"></div>
+		<div class="fb r" onclick="color('red')"></div>
+		<div class="fb or" onclick="color('orange')"></div>
+		<div class="fb ye" onclick="color('yellow')"></div>
+		<div class="fb gr" onclick="color('green')"></div>
+		<div class="fb bl" onclick="color('blue')"></div>
+		<div class="fb vi" onclick="color('purple')"></div>
+		<div class="fb gra" onclick="color('gray')"></div>
+		<div class="fb wh" onclick="color('white')"></div>
+	</div>
+</div>
+<div class="allb" >
+	<h4 class="und">2nd Band</h4>
+	<div class="scrol">
+		<div class="fb b" onclick="color2('black')"></div>
+		<div class="fb br" onclick="color2('brown')"></div>
+		<div class="fb r" onclick="color2('red')"></div>
+		<div class="fb or" onclick="color2('orange')"></div>
+		<div class="fb ye" onclick="color2('yellow')"></div>
+		<div class="fb gr" onclick="color2('green')"></div>
+		<div class="fb bl" onclick="color2('blue')"></div>
+		<div class="fb vi" onclick="color2('purple')"></div>
+		<div class="fb gra" onclick="color2('gray')"></div>
+		<div class="fb wh" onclick="color2('white')"></div>
+	</div>
+</div>
+<div class="allb" >
+	<h4 class="und">3rd Band</h4>
+	<div class="scrol">
+		<div class="fb b" onclick="color3('black')"></div>
+		<div class="fb br" onclick="color3('brown')"></div>
+		<div class="fb r" onclick="color3('red')"></div>
+		<div class="fb or" onclick="color3('orange')"></div>
+		<div class="fb ye" onclick="color3('yellow')"></div>
+		<div class="fb gr" onclick="color3('green')"></div>
+		<div class="fb bl" onclick="color3('blue')"></div>
+		<div class="fb vi" onclick="color3('purple')"></div>
+		<div class="fb gra" onclick="color3('gray')"></div>
+		<div class="fb wh" onclick="color3('white')"></div>
+	</div>
+</div>
+<div class="allb" >
+	<h4 class="und">Mul Band</h4>
+	<div class="scrol">
+		<div class="fb b" onclick="color4('black')"></div>
+		<div class="fb br" onclick="color4('brown')"></div>
+		<div class="fb r" onclick="color4('red')"></div>
+		<div class="fb or" onclick="color4('orange')"></div>
+		<div class="fb ye" onclick="color4('yellow')"></div>
+		<div class="fb gr" onclick="color4('green')"></div>
+		<div class="fb bl" onclick="color4('blue')"></div>
+		<div class="fb vi" onclick="color4('purple')"></div>
+		<div class="fb gra" onclick="color4('gray')"></div>
+		<div class="fb wh" onclick="color4('white')"></div>
+		<div class="fb go" onclick="color4('gold')"></div>
+		<div class="fb si" onclick="color4('silver')"></div>
+	</div>
+</div>
+<div class="allb" >
+	<h4 class="und">Tol Band</h4>
+	<div class="scrol">
+		<div class="fb go" onclick="color5('gold')"></div>
+		<div class="fb si" onclick="color5('silver')"></div>
+	</div>
+</div>
+</div>
+	<script type="text/javascript">
+var o = "1";
+var t = "0";
+var th = "0";
+var fo = 1;
+var f = "±10%";
+function color(x){
+	document.getElementById("fv").style.background = x;
+	var cn = {
+		"brown":"1",
+		"red":"2",
+		"orange":"3",
+		"yellow":"4",
+		"green":"5",
+		"blue":"6",
+		"purple":"7",
+		"gray":"8",
+		"white":"9"
+	}
+	o = cn[x];
+	return o;
+}
+function color2(y){
+	document.getElementById("sv").style.background = y;
+	var c2n = {
+		"black":"0",
+		"brown":"1",
+		"red":"2",
+		"orange":"3",
+		"yellow":"4",
+		"green":"5",
+		"blue":"6",
+		"purple":"7",
+		"gray":"8",
+		"white":"9"
+	}
+	t = c2n[y];
+	return t;
+}
+function color3(z){
+	document.getElementById("tv").style.background = z;
+	var c3n = {
+		"black":"0",
+		"brown":"1",
+		"red":"2",
+		"orange":"3",
+		"yellow":"4",
+		"green":"5",
+		"blue":"6",
+		"purple":"7",
+		"gray":"8",
+		"white":"9"
+	}
+	th = c3n[z];
+	return th;
+}
+function color4(ne){
+	document.getElementById("fov").style.background = ne;
+	var c4n = {
+		"black":1,
+		"brown":10,
+		"red":100,
+		"orange":1000,
+		"yellow":10000,
+		"green":100000,
+		"blue":1000000,
+		"purple":10000000,
+		"gray":100000000,
+		"white":1000000000,
+		"gold":0.1,
+		"silver":0.01
+	}
+	fo = c4n[ne];
+	return fo;
+}
+function color5(n){
+	document.getElementById("lv").style.background = n;
+	c4n = {
+		"gold":"±5%",
+		"silver":"±10%"
+	}
+	f = c4n[n];
+	return f;
+}
+function a(){
+	var j = Number(o + t + th);
+	var v = j * fo;
+	var val = v.toFixed(2);
+	Ω=val/1
+	KΩ=Ω/1000
+	MΩ=KΩ/1000
+	GΩ=MΩ/1000
+	if(val >= 0 & val < 1000){
+		document.getElementById("val").innerHTML=Ω + "Ω " + f;
+	}
+	else if(val >= 1000 & val < Math.pow(10,6)){
+		document.getElementById("val").innerHTML=KΩ+"kΩ " + f;
+	}
+	else if(val >= Math.pow(10,6) & val < Math.pow(10,9)){
+		document.getElementById("val").innerHTML=MΩ+"MΩ " + f;
+	}
+	else{
+		document.getElementById("val").innerHTML=GΩ+"GΩ " + f;
+	}
+}
+	</script>
+</body>
+</html>
